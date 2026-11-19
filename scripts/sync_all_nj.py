@@ -2,13 +2,14 @@ import subprocess
 import sys
 
 SCRIPTS = [
-    'scripts/collect_floydhall.py',
-    'scripts/collect_mennen.py',
-    'scripts/collect_codey.py',
-    'scripts/collect_icehouse.py',
-    'scripts/collect_skylands.py',
-    'scripts/collect_icevault.py',
-    'scripts/collect_bridgewater.py',
+    "scripts/collect_floydhall.py",
+    "scripts/collect_mennen.py",
+    "scripts/collect_codey.py",
+    "scripts/collect_icehouse.py",
+    "scripts/collect_skylands.py",
+    "scripts/collect_icevault.py",
+    "scripts/collect_bridgewater.py",
+    "scripts/collect_proskate.py",
 ]
 
 def main():
@@ -18,7 +19,7 @@ def main():
         res = subprocess.run([python_exe, script])
         if res.returncode != 0:
             raise SystemExit(f"Failed while running {script}")
-    print("\nAll 7 New Jersey rink collectors finished cleanly!")
+    print(f"\nAll {len(SCRIPTS)} New Jersey rink collectors finished cleanly!")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
